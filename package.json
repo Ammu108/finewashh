@@ -1,14 +1,21 @@
 {
-  "name": "atom-hospital",
+  "name": "finewashh",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check": "concurrently \"pnpm run check-types\" \"pnpm lint\" \"pnpm run format:check\" --names \"TYPE,LINT,FMT\" --prefix-colors \"blue,magenta,green\"",
+    "check-types": "turbo run check-types",
+    "clean": "git clean -xfd",
+    "clean:workspaces": "turbo run clean",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write ."
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.15",
+    "concurrently": "^9.2.1",
     "prettier": "^3.7.4",
     "turbo": "^2.8.9",
     "typescript": "5.9.2"
