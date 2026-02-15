@@ -20,8 +20,8 @@ const ThemeImage = (props: Props) => {
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={`${styles.page}`}>
+      <main className={`${styles.main} p-8`}>
         <ThemeImage
           className={styles.logo}
           srcLight="turborepo-dark.svg"
@@ -67,6 +67,11 @@ export default function Home() {
           Open alert
         </Button>
       </main>
+
+      <div className="bg-blue-400 rounded-full p-4 flex justify-center items-center cursor-pointer">
+        Hello Tailwind!....
+      </div>
+
       <footer className={styles.footer}>
         <a
           href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
