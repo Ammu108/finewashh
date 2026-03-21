@@ -1,12 +1,12 @@
 {
-  "name": "finewashh",
+  "name": "atom-hospital",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "check": "concurrently \"pnpm run check-types\" \"pnpm lint\" \"pnpm run format:check\" --names \"TYPE,LINT,FMT\" --prefix-colors \"blue,magenta,green\"",
     "check-types": "turbo run check-types",
-    "clean": "git clean -xfd",
+    "clean": "node -e \"const fs=require('fs'); const {rimrafSync}=require('rimraf'); ['node_modules','.turbo','apps/web-app/.next','apps/admin-panel/.next'].forEach((p)=>fs.existsSync(p) && rimrafSync(p));\"",
     "clean:workspaces": "turbo run clean",
     "format": "biome format --write .",
     "format:check": "biome format .",
@@ -15,8 +15,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.15",
+    "@tailwindcss/postcss": "^4.0.0",
     "concurrently": "^9.2.1",
     "prettier": "^3.7.4",
+    "rimraf": "^6.0.1",
     "turbo": "^2.8.9",
     "typescript": "5.9.2"
   },
