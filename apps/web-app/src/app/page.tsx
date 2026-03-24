@@ -1,8 +1,15 @@
+import Categories from "@/components/home/categories";
+import HeroSection from "@/components/home/hero-section";
+import TopDoctors from "@/components/home/top-doctors";
+
 export default function Page() {
   return (
-    <main className="min-h-screen px-6 py-24">
-      <h1 className="text-3xl font-semibold">Atom Hospital</h1>
-      <p className="mt-4 text-muted-foreground">Homepage is live.</p>
+    <main>
+      <HeroSection />
+      <div className="max-w-6xl mx-auto flex flex-col gap-16">
+        <Categories />
+        <TopDoctors />
+      </div>
     </main>
   );
 }

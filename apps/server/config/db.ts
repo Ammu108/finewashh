@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import "dotenv/config";
 
 export const connectDB = async () => {
-  await mongoose
-    .connect("mongodb+srv://amenx:amenx000@cluster0.edc8w.mongodb.net/hospital")
-    .then(() => console.log("DB Connected"));
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl) {
+    throw new Error("DATABASE_URL is not set in the environment");
+  }
+
+  await mongoose.connect(databaseUrl).then(() => console.log("DB Connected"));
 };
