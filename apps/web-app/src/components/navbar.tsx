@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import LOGO from "../../public/logo.webp";
+import LOGO from "../logo.webp";
 import { Button } from "./ui/button";
 
 const NAV_LINKS = [
