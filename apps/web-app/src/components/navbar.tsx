@@ -2,7 +2,7 @@
 import { IconMenu2, IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import LOGO from "../../public/logo.webp";
@@ -17,15 +17,21 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => setMounted(true), []);
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+
+  const handleAuth = () => {
+    router.push(`${pathname}?auth=signup`);
   };
 
   return (
@@ -72,7 +78,7 @@ export default function Navbar() {
           </button>
 
           <div className="hidden md:block">
-            <Button variant="primary" size="xs">
+            <Button onClick={handleAuth} variant="primary" size="xs">
               Sign Up
             </Button>
           </div>
@@ -117,7 +123,7 @@ export default function Navbar() {
             );
           })}
           <div className="pt-4">
-            <Button className="w-full" variant="primary" size="xs">
+            <Button onClick={handleAuth} className="w-full" variant="primary" size="xs">
               Sign Up
             </Button>
           </div>

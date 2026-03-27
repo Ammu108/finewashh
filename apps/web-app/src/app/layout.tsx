@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Geist } from "next/font/google";
+import { Suspense } from "react";
 import Footer from "@/components/footer";
+import { ModalProvider } from "@/components/modals/modal-provider";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/providers/themeProvider";
 import { cn } from "@/lib/utils";
@@ -37,6 +39,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Suspense fallback={null}>
+            <ModalProvider />
+          </Suspense>
           <Navbar />
           {children}
           <Footer />

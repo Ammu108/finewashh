@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "nodemon --exec tsx server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "clean": "node -e \"const fs=require('fs'); const {rimrafSync}=require('rimraf'); ['node_modules','dist'].forEach((p)=>fs.existsSync(p) && rimrafSync(p));\"",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
   },
   "keywords": [],
   "author": "",

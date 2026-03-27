@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
+    "typecheck": "tsc --noEmit",
     "check-types": "next typegen && tsc --noEmit",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
     "clean": "node -e \"const fs=require('fs'); const {rimrafSync}=require('rimraf'); ['node_modules','.next'].forEach((p)=>fs.existsSync(p) && rimrafSync(p));\""
   },
   "dependencies": {
