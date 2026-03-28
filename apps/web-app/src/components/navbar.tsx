@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import LOGO from "../logo.webp";
 import { Button } from "./ui/button";
 
 const NAV_LINKS = [
@@ -39,7 +38,7 @@ export default function Navbar() {
       <div className="mx-auto py-3 flex items-center justify-between gap-8 max-w-6xl px-4">
         {/* ── LEFT: Logo ── */}
         <Link href="/" className="flex flex-row items-center gap-3 shrink-0 group">
-          <Image src={LOGO} alt="Logo" width={32} height={32} className="rounded-sm" />
+          <Image src="/logo.webp" alt="Logo" width={32} height={32} className="rounded-sm" />
           <h1 className="text-lg font-bold text-foreground">Atom Hospital</h1>
         </Link>
 
