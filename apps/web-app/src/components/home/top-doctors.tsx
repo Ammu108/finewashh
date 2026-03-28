@@ -1,5 +1,4 @@
 import Image from "next/image";
-import DOC1 from "../../../public/images/doc1.png";
 import { Button } from "../ui/button";
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
@@ -20,7 +19,7 @@ const TopDoctors = () => {
       <div>
         <Card className="relative mx-auto w-full max-w-xs pt-0">
           <div className="relative aspect-video">
-            <Image src={DOC1} alt="Doctor" fill className="w-full object-cover" />
+            <Image src="/images/doc1.png" alt="Doctor" fill className="w-full object-cover" />
           </div>
           <CardHeader>
             <CardAction></CardAction>

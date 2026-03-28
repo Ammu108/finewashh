@@ -6,7 +6,6 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import LOGO from "../../public/logo.webp";
 import { Button } from "./ui/button";
 
 const SOCIAL_ICONS = [
@@ -27,7 +26,13 @@ export default function Footer() {
           <div className="flex flex-col gap-4 max-w-sm">
             {/* Logo */}
             <div className="flex flex-row items-center gap-2">
-              <Image src={LOGO} alt="Atom Hospital Logo" className="w-10 h-10" />
+              <Image
+                src="/logo.webp"
+                alt="Atom Hospital Logo"
+                width={32}
+                height={32}
+                className="w-10 h-10"
+              />
               <span className="text-2xl font-bold text-foreground tracking-tight">
                 Atom Hospital
               </span>

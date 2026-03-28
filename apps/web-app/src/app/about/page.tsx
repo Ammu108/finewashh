@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ABOOUT from "../../../public/about_img.jpg";
 
 const WHY_CARDS = [
   {
@@ -21,7 +20,9 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="w-full md:w-[42%] shrink-0">
             <Image
-              src={ABOOUT}
+              src="/about_img.jpg"
+              width={600}
+              height={400}
               alt="Doctor consultation"
               className="w-full h-72 md:h-80 object-cover"
             />
